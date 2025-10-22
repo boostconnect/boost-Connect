@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import logo from "@/assets/boost-connect-logo.png";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -29,8 +30,8 @@ const Navbar = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link to="/" className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent">
-            SocialBoost
+          <Link to="/" className="flex items-center">
+            <img src={logo} alt="Boost Connect" className="h-10 w-auto" />
           </Link>
 
           {/* Desktop Navigation */}
