@@ -1,6 +1,7 @@
 import AnimatedBackground from "@/components/AnimatedBackground";
 import Hero from "@/components/Hero";
 import Services from "@/components/Services";
+import GrowthStats from "@/components/GrowthStats";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
@@ -10,6 +11,7 @@ const Index = () => {
       <AnimatedBackground />
       <Hero />
       <Services />
+      <GrowthStats />
       <Contact />
       <Footer />
     </div>
