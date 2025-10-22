@@ -1,21 +1,9 @@
 import { Card } from "@/components/ui/card";
-import { Instagram, Facebook, Twitter, Send, MessageCircle } from "lucide-react";
+import { Instagram, Facebook, Twitter, Send, MessageCircle, Icon, Linkedin } from "lucide-react";
 import { useState } from "react";
 import PackageSelector from "./PackageSelector";
 
 const platforms = [
-  {
-    name: "Instagram",
-    icon: Instagram,
-    gradient: "from-purple-600 to-pink-600",
-    description: "Grow your Instagram presence with targeted campaigns"
-  },
-  {
-    name: "Facebook",
-    icon: Facebook,
-    gradient: "from-blue-600 to-blue-800",
-    description: "Expand your Facebook reach and engagement"
-  },
   {
     name: "X (Twitter)",
     icon: Twitter,
@@ -27,6 +15,19 @@ const platforms = [
     icon: Send,
     gradient: "from-blue-400 to-blue-600",
     description: "Boost your Telegram community growth"
+  },
+  {
+    name: "Instagram",
+    icon: Instagram,
+    gradient: "from-purple-600 to-pink-600",
+    description: "Grow your Instagram presence with targeted campaigns"
+  },
+  {
+    name: "Facebook",
+    icon: Facebook,
+    gradient: "from-blue-600 to-blue-800",
+    Icon: Linkedin,
+    description: "Expand your Facebook reach and engagement"
   },
   {
     name: "Discord",
