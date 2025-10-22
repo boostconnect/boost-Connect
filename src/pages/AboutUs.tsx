@@ -103,12 +103,12 @@ const AboutUs = () => {
             <h2 className="text-4xl font-bold text-center mb-12">Our Story</h2>
             <Card className="p-12 bg-gradient-card backdrop-blur-xl border-border">
               <p className="text-lg text-foreground/90 leading-relaxed mb-6">
-                Founded in 2020, we set out to transform how brands grow their social media presence. 
+                Founded in 2024, we set out to transform how brands grow their social media presence. 
                 Recognizing the power of authentic engagement and the potential of blockchain technology, 
                 we pioneered the integration of Web3 payment systems into social media marketing services.
               </p>
               <p className="text-lg text-foreground/90 leading-relaxed">
-                Today, we're proud to have helped over 50,000 clients grow their audience by more than 200 million 
+                Today, we're proud to have helped over 500 clients grow their audience by initiate
                 followers across Instagram, Facebook, X, Telegram, and Discord. Our commitment to innovation, 
                 security, and results has made us a trusted partner for brands looking to amplify their digital presence.
               </p>
