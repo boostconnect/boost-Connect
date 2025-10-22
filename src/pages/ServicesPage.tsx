@@ -8,20 +8,6 @@ import AnimatedBackground from "@/components/AnimatedBackground";
 
 const platforms = [
   {
-    name: "Instagram",
-    icon: Instagram,
-    gradient: "from-purple-600 to-pink-600",
-    description: "Grow your Instagram presence with targeted campaigns",
-    details: "Our Instagram growth service includes strategic content planning, hashtag optimization, engagement tactics, and influencer collaboration to maximize your reach and follower growth."
-  },
-  {
-    name: "Facebook",
-    icon: Facebook,
-    gradient: "from-blue-600 to-blue-800",
-    description: "Expand your Facebook reach and engagement",
-    details: "Boost your Facebook page with targeted ad campaigns, community management, viral content creation, and data-driven strategies to increase your audience and engagement rates."
-  },
-  {
     name: "X (Twitter)",
     icon: Twitter,
     gradient: "from-sky-400 to-blue-600",
@@ -34,6 +20,20 @@ const platforms = [
     gradient: "from-blue-400 to-blue-600",
     description: "Boost your Telegram community growth",
     details: "Expand your Telegram channel or group with targeted member acquisition, engagement strategies, and community management to build a loyal and active audience."
+  },
+  {
+    name: "Instagram",
+    icon: Instagram,
+    gradient: "from-purple-600 to-pink-600",
+    description: "Grow your Instagram presence with targeted campaigns",
+    details: "Our Instagram growth service includes strategic content planning, hashtag optimization, engagement tactics, and influencer collaboration to maximize your reach and follower growth."
+  },
+  {
+    name: "Facebook",
+    icon: Facebook,
+    gradient: "from-blue-600 to-blue-800",
+    description: "Expand your Facebook reach and engagement",
+    details: "Boost your Facebook page with targeted ad campaigns, community management, viral content creation, and data-driven strategies to increase your audience and engagement rates."
   },
   {
     name: "Discord",
