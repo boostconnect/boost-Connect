@@ -52,7 +52,7 @@ const platforms = [
 ];
 
 const ServicesPage = () => {
-  const [selectedPlatform, setSelectedPlatform] = useState<string | null>(null);
+  const [selectedPlatform, setSelectedPlatform] = useState<string>("");
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -60,9 +60,9 @@ const ServicesPage = () => {
       <Navbar />
       
       <main className="pt-24 pb-16 relative">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 max-w-4xl">
           {/* Header */}
-          <div className="text-center mb-16 animate-fade-in">
+          <div className="text-center mb-12 animate-fade-in">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-primary bg-clip-text text-transparent">
               Our Services
             </h1>
@@ -72,71 +72,44 @@ const ServicesPage = () => {
             </p>
           </div>
 
-          {/* Mobile Dropdown Selector - visible only on mobile */}
-          <div className="lg:hidden mb-8">
-            <Select onValueChange={(value) => setSelectedPlatform(value)}>
-              <SelectTrigger className="w-full h-14 text-lg bg-card border-2">
-                <SelectValue placeholder="Select a platform" />
-              </SelectTrigger>
-              <SelectContent className="bg-popover">
-                {platforms.map((platform) => {
-                  const Icon = platform.icon;
-                  return (
-                    <SelectItem key={platform.name} value={platform.name} className="text-base py-3">
-                      <div className="flex items-center gap-3">
-                        <div className={`w-8 h-8 rounded-lg bg-gradient-to-br ${platform.gradient} flex items-center justify-center`}>
-                          <Icon className="w-4 h-4 text-white" />
-                        </div>
-                        <span>{platform.name}</span>
-                      </div>
-                    </SelectItem>
-                  );
-                })}
-              </SelectContent>
-            </Select>
-          </div>
+          {/* Service Selection Form */}
+          <Card className="bg-gradient-card backdrop-blur-xl border-border p-6 md:p-8 mb-12">
+            <div className="space-y-6">
+              {/* Search By Category */}
+              <div>
+                <label className="block text-sm font-medium mb-2">Search By Category</label>
+                <Select value={selectedPlatform} onValueChange={setSelectedPlatform}>
+                  <SelectTrigger className="w-full h-12 bg-background border-2">
+                    <SelectValue placeholder="Select a platform" />
+                  </SelectTrigger>
+                  <SelectContent className="bg-popover z-50">
+                    {platforms.map((platform) => {
+                      const Icon = platform.icon;
+                      return (
+                        <SelectItem key={platform.name} value={platform.name} className="text-base py-3">
+                          <div className="flex items-center gap-3">
+                            <div className={`w-8 h-8 rounded-lg bg-gradient-to-br ${platform.gradient} flex items-center justify-center`}>
+                              <Icon className="w-4 h-4 text-white" />
+                            </div>
+                            <span>{platform.name}</span>
+                          </div>
+                        </SelectItem>
+                      );
+                    })}
+                  </SelectContent>
+                </Select>
+              </div>
 
-          {/* Desktop Services Grid - hidden on mobile */}
-          <div className="hidden lg:grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
-            {platforms.map((platform, index) => {
-              const Icon = platform.icon;
-              return (
-                <Card
-                  key={platform.name}
-                  className="group relative overflow-hidden bg-gradient-card backdrop-blur-xl border-border hover:shadow-glow transition-all duration-300"
-                  style={{ animationDelay: `${index * 0.1}s` }}
-                >
-                  <div className="p-8 relative z-10">
-                    <div className="flex items-start gap-6 mb-4">
-                      <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${platform.gradient} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
-                        <Icon className="w-7 h-7 text-white" />
-                      </div>
-                      <div className="flex-1">
-                        <h3 className="text-3xl font-bold mb-2">{platform.name}</h3>
-                        <p className="text-muted-foreground text-lg">{platform.description}</p>
-                      </div>
-                    </div>
-                    <p className="text-foreground/80 mb-6">{platform.details}</p>
-                    <button
-                      onClick={() => setSelectedPlatform(platform.name)}
-                      className="px-6 py-3 bg-gradient-primary rounded-lg font-medium hover:shadow-glow transition-all duration-300"
-                    >
-                      View Services
-                    </button>
-                  </div>
-                  <div className={`absolute inset-0 bg-gradient-to-br ${platform.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-300`} />
-                </Card>
-              );
-            })}
-          </div>
+              {/* Service Selector - shown when platform is selected */}
+              {selectedPlatform && (
+                <PackageSelector 
+                  platform={selectedPlatform} 
+                  onClose={() => setSelectedPlatform("")} 
+                />
+              )}
+            </div>
+          </Card>
 
-          {/* Package Selector */}
-          {selectedPlatform && (
-            <PackageSelector 
-              platform={selectedPlatform} 
-              onClose={() => setSelectedPlatform(null)} 
-            />
-          )}
 
           {/* Why Choose Us Section */}
           <div className="mt-24 text-center">
