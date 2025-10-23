@@ -5,6 +5,13 @@ import PackageSelector from "@/components/PackageSelector";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import AnimatedBackground from "@/components/AnimatedBackground";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 const platforms = [
   {
@@ -56,17 +63,41 @@ const ServicesPage = () => {
         <div className="container mx-auto px-4">
           {/* Header */}
           <div className="text-center mb-16 animate-fade-in">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-primary bg-clip-text text-transparent">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-primary bg-clip-text text-transparent">
               Our Services
             </h1>
-            <p className="text-muted-foreground text-xl max-w-3xl mx-auto">
+            <p className="text-muted-foreground text-lg md:text-xl max-w-3xl mx-auto">
               Professional social media growth campaigns powered by Web3 technology. 
               Choose your platform and start growing your brand today.
             </p>
           </div>
 
-          {/* Services Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+          {/* Mobile Dropdown Selector - visible only on mobile */}
+          <div className="lg:hidden mb-8">
+            <Select onValueChange={(value) => setSelectedPlatform(value)}>
+              <SelectTrigger className="w-full h-14 text-lg bg-card border-2">
+                <SelectValue placeholder="Select a platform" />
+              </SelectTrigger>
+              <SelectContent className="bg-popover">
+                {platforms.map((platform) => {
+                  const Icon = platform.icon;
+                  return (
+                    <SelectItem key={platform.name} value={platform.name} className="text-base py-3">
+                      <div className="flex items-center gap-3">
+                        <div className={`w-8 h-8 rounded-lg bg-gradient-to-br ${platform.gradient} flex items-center justify-center`}>
+                          <Icon className="w-4 h-4 text-white" />
+                        </div>
+                        <span>{platform.name}</span>
+                      </div>
+                    </SelectItem>
+                  );
+                })}
+              </SelectContent>
+            </Select>
+          </div>
+
+          {/* Desktop Services Grid - hidden on mobile */}
+          <div className="hidden lg:grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
             {platforms.map((platform, index) => {
               const Icon = platform.icon;
               return (
