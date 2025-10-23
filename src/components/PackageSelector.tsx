@@ -17,38 +17,65 @@ interface Service {
   price: string;
   features: string[];
   quality: string;
-  speed: string;
+  countries: string;
 }
 
 const platformServices: Record<string, Service[]> = {
   "X (Twitter)": [
     {
-      id: "twitter_1",
+      id: "7858-Twitter( X.com) Followers",
       name: "X Followers",
-      description: "Grow your X following with real, active users",
-      price: "From $10",
-      features: ["Real users", "Gradual delivery", "30-day refill guarantee"],
-      quality: "High",
-      speed: "Fast"
+      description: "Grow your X followers with real, active users",
+      price: "$3 For each 1000 Viewer",
+      features: ["From 10 Up to 500 Day ", "Instant Delivery", "Only 500-day guarantee"],
+      quality: "HQ",
+      countries: "UK-S.KORIA-JAPAN-INDIA-INDONESIA GERMANY"
     },
     {
-      id: "twitter_2",
+      id: "7556-Twitter ( X.com) Post views",
       name: "X Retweets",
       description: "Boost your tweet visibility with retweets",
       price: "From $5",
       features: ["Instant start", "High retention", "Targeted audience"],
       quality: "Premium",
-      speed: "Instant"
+      countries: "Instant"
     },
-    {
-      id: "twitter_3",
+        {
+      id: "7556-Twitter ( X.com) Post views",
       name: "X Engagement Package",
       description: "Complete engagement: likes, retweets, and replies",
       price: "From $25",
       features: ["Full engagement", "Premium quality", "Analytics included"],
       quality: "Premium",
       speed: "Fast"
-    }
+    },
+        {
+      id: "7556-Twitter ( X.com) Post views",
+      name: "X Engagement Package",
+      description: "Complete engagement: likes, retweets, and replies",
+      price: "From $25",
+      features: ["Full engagement", "Premium quality", "Analytics included"],
+      quality: "Premium",
+      speed: "Fast"
+    },
+    {
+      id: "7556-Twitter ( X.com) Post views",
+      name: "X Engagement Package",
+      description: "Complete engagement: likes, retweets, and replies",
+      price: "From $25",
+      features: ["Full engagement", "Premium quality", "Analytics included"],
+      quality: "Premium",
+      speed: "Fast"
+    },
+    {
+      id: "Twitter ( X.com) Post views ",
+      name: "X Posts",
+      description: "Grow your X Post viewers with real, active users",
+      price: "$3 For each 1000 Viewer",
+      features: ["From 10 Up to 500 Day ", "Instant Delivery", "Only 500-day guarantee"],
+      quality: "HQ",
+      countries: "UK-S.KORIA-JAPAN-INDIA-INDONESIA GERMANY"
+    } 
   ],
   "Telegram": [
     {
