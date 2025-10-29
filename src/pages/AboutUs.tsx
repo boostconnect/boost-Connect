@@ -103,7 +103,7 @@ const AboutUs = () => {
             <h2 className="text-4xl font-bold text-center mb-12">Our Story</h2>
             <Card className="p-12 bg-gradient-card backdrop-blur-xl border-border">
               <p className="text-lg text-foreground/90 leading-relaxed mb-6">
-                Founded in 2024, we set out to transform how brands grow their social media presence. 
+                Founded in 2025, we set out to transform how brands grow their social media presence. 
                 Recognizing the power of authentic engagement and the potential of blockchain technology, 
                 we pioneered the integration of Web3 payment systems into social media marketing services.
               </p>
