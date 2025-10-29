@@ -1,5 +1,6 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
 
 const ArrowRight = (props: React.SVGProps<SVGSVGElement>) => (
   <svg
@@ -21,8 +22,10 @@ const ArrowRight = (props: React.SVGProps<SVGSVGElement>) => (
 );
 
 const Hero = () => {
+  const navigate = useNavigate();
+  
   const navigateToServices = () => {
-    window.location.href = '/services';
+    navigate('/services');
   };
 
   return (
