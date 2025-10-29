@@ -53,6 +53,7 @@ const platforms = [
 
 const ServicesPage = () => {
   const [selectedPlatform, setSelectedPlatform] = useState<string>("");
+  const [selectedPlatform2, setSelectedPlatform2] = useState<string>("");
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -105,6 +106,44 @@ const ServicesPage = () => {
                 <PackageSelector 
                   platform={selectedPlatform} 
                   onClose={() => setSelectedPlatform("")} 
+                />
+              )}
+            </div>
+          </Card>
+
+          {/* Second Service Selection Form */}
+          <Card className="bg-gradient-card backdrop-blur-xl border-border p-6 md:p-8 mb-12">
+            <div className="space-y-6">
+              {/* Search By Category */}
+              <div>
+                <label className="block text-sm font-medium mb-2">Add Another Service</label>
+                <Select value={selectedPlatform2} onValueChange={setSelectedPlatform2}>
+                  <SelectTrigger className="w-full h-12 bg-background border-2">
+                    <SelectValue placeholder="Select a platform" />
+                  </SelectTrigger>
+                  <SelectContent className="bg-popover z-50">
+                    {platforms.map((platform) => {
+                      const Icon = platform.icon;
+                      return (
+                        <SelectItem key={platform.name} value={platform.name} className="text-base py-3">
+                          <div className="flex items-center gap-3">
+                            <div className={`w-8 h-8 rounded-lg bg-gradient-to-br ${platform.gradient} flex items-center justify-center`}>
+                              <Icon className="w-4 h-4 text-white" />
+                            </div>
+                            <span>{platform.name}</span>
+                          </div>
+                        </SelectItem>
+                      );
+                    })}
+                  </SelectContent>
+                </Select>
+              </div>
+
+              {/* Service Selector - shown when platform is selected */}
+              {selectedPlatform2 && (
+                <PackageSelector 
+                  platform={selectedPlatform2} 
+                  onClose={() => setSelectedPlatform2("")} 
                 />
               )}
             </div>

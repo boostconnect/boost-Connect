@@ -17,7 +17,8 @@ interface Service {
   price: string;
   features: string[];
   quality: string;
-  countries: string;
+  countries?: string;
+  speed?: string;
 }
 
 const platformServices: Record<string, Service[]> = {

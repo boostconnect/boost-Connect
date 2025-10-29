@@ -2,8 +2,8 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 
 const Hero = () => {
-  const scrollToServices = () => {
-    document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
+  const navigateToServices = () => {
+    window.location.href = '/services';
   };
 
   return (
@@ -21,7 +21,7 @@ const Hero = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
             <Button 
               size="lg" 
-              onClick={scrollToServices}
+              onClick={navigateToServices}
               className="bg-gradient-primary hover:shadow-glow transition-all duration-300 text-lg px-8"
             >
               Explore Services <ArrowRight className="ml-2" />
