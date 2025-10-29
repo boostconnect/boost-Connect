@@ -4,6 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Mail, Send } from "lucide-react";
 import { useState } from "react";
+import * as React from "react";
 import { useToast } from "@/hooks/use-toast";
 
 const Contact = () => {
@@ -89,7 +90,7 @@ ${formData.message}`;
               <div className="mt-8 pt-8 border-t border-border text-center">
                 <div className="flex items-center justify-center gap-2 text-muted-foreground">
                   <Mail className="w-5 h-5" />
-                  <span>your-email@example.com</span>
+                  <span>boost1connect@gmail.com</span>
                 </div>
               </div>
             </div>
