@@ -1,5 +1,5 @@
 import { Card } from "@/components/ui/card";
-import { Instagram, Facebook, Twitter, Send, MessageCircle, Icon, Linkedin } from "lucide-react";
+import { Instagram, Facebook, Twitter, Send, MessageCircle, Icon, Linkedin, YoutubeIcon } from "lucide-react";
 import { useState } from "react";
 import PackageSelector from "./PackageSelector";
 
@@ -17,8 +17,8 @@ const platforms = [
     description: "Boost your Telegram community growth"
   },
   {
-    name: "Instagram",
-    icon: Instagram,
+    name: "Youtube",
+    icon: YoutubeIcon,
     gradient: "from-purple-600 to-pink-600",
     description: "Grow your Instagram presence with targeted campaigns"
   },
