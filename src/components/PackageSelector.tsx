@@ -42,24 +42,6 @@ const platformServices: Record<string, Service[]> = {
       features: ["Real accounts", "Active members", "No drop guarantee"],
       quality: "High",
       speed: "Fast"
-    },
-    {
-      id: "telegram_2",
-      name: "Telegram Views",
-      description: "Increase post views and reach",
-      price: "From $3",
-      features: ["Instant delivery", "High retention", "Bulk packages available"],
-      quality: "Premium",
-      speed: "Instant"
-    },
-    {
-      id: "telegram_3",
-      name: "Telegram Reactions",
-      description: "Boost engagement with post reactions",
-      price: "From $8",
-      features: ["Custom reactions", "Fast delivery", "Safe methods"],
-      quality: "High",
-      speed: "Fast"
     }
   ],
   "Instagram": [
@@ -100,24 +82,6 @@ const platformServices: Record<string, Service[]> = {
       features: ["Real users", "Targeted by country", "30-day guarantee"],
       quality: "Premium",
       speed: "Medium"
-    },
-    {
-      id: "facebook_2",
-      name: "Facebook Post Engagement",
-      description: "Boost likes, comments, and shares",
-      price: "From $8",
-      features: ["Full engagement", "Instant start", "High quality"],
-      quality: "High",
-      speed: "Fast"
-    },
-    {
-      id: "facebook_3",
-      name: "Facebook Video Views",
-      description: "Increase your video reach and views",
-      price: "From $5",
-      features: ["Real views", "High retention", "Fast delivery"],
-      quality: "Premium",
-      speed: "Fast"
     }
   ],
   "Discord": [
@@ -129,22 +93,15 @@ const platformServices: Record<string, Service[]> = {
       features: ["Real accounts", "Active users", "No drop guarantee"],
       quality: "High",
       speed: "Fast"
-    },
+    }
+  ],
+  "Youtube": [
     {
-      id: "discord_2",
-      name: "Discord Server Boosts",
-      description: "Boost your server level and perks",
-      price: "From $30",
-      features: ["Instant delivery", "Secure method", "Permanent boosts"],
-      quality: "Premium",
-      speed: "Instant"
-    },
-    {
-      id: "discord_3",
-      name: "Discord Engagement Package",
-      description: "Increase server activity and engagement",
-      price: "From $25",
-      features: ["Active members", "Regular activity", "Custom package"],
+      id: "Youtube_1",
+      name: "Youtube Followers",
+      description: "Grow your Youtube followers",
+      price: "From $12",
+      features: ["High-quality followers", "Gradual delivery", "60-day refill"],
       quality: "Premium",
       speed: "Medium"
     }
