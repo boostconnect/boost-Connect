@@ -27,56 +27,11 @@ const platformServices: Record<string, Service[]> = {
       id: "7858-Twitter( X.com) Followers",
       name: "X Followers",
       description: "Grow your X followers with real, active users",
-      price: "$3 For each 1000 Viewer",
-      features: ["From 10 Up to 500 Day ", "Instant Delivery", "Only 500-day guarantee"],
+      price: "Depending on quantity",
+      features: ["Choose your Audienec", "Instant Delivery", "Up to 500-day"],
       quality: "HQ",
       countries: "UK-S.KORIA-JAPAN-INDIA-INDONESIA GERMANY"
-    },
-    {
-      id: "7556-Twitter ( X.com) Post views",
-      name: "X Retweets",
-      description: "Boost your tweet visibility with retweets",
-      price: "From $5",
-      features: ["Instant start", "High retention", "Targeted audience"],
-      quality: "Premium",
-      countries: "Instant"
-    },
-        {
-      id: "7556-Twitter ( X.com) Post views",
-      name: "X Engagement Package",
-      description: "Complete engagement: likes, retweets, and replies",
-      price: "From $25",
-      features: ["Full engagement", "Premium quality", "Analytics included"],
-      quality: "Premium",
-      speed: "Fast"
-    },
-        {
-      id: "7556-Twitter ( X.com) Post views",
-      name: "X Engagement Package",
-      description: "Complete engagement: likes, retweets, and replies",
-      price: "From $25",
-      features: ["Full engagement", "Premium quality", "Analytics included"],
-      quality: "Premium",
-      speed: "Fast"
-    },
-    {
-      id: "7556-Twitter ( X.com) Post views",
-      name: "X Engagement Package",
-      description: "Complete engagement: likes, retweets, and replies",
-      price: "From $25",
-      features: ["Full engagement", "Premium quality", "Analytics included"],
-      quality: "Premium",
-      speed: "Fast"
-    },
-    {
-      id: "Twitter ( X.com) Post views ",
-      name: "X Posts",
-      description: "Grow your X Post viewers with real, active users",
-      price: "$3 For each 1000 Viewer",
-      features: ["From 10 Up to 500 Day ", "Instant Delivery", "Only 500-day guarantee"],
-      quality: "HQ",
-      countries: "UK-S.KORIA-JAPAN-INDIA-INDONESIA GERMANY"
-    } 
+    }
   ],
   "Telegram": [
     {
