@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import logo from "@/assets/boost-connect-logo.png";
@@ -7,6 +7,7 @@ import logo from "@/assets/boost-connect-logo.png";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
 
   const isActive = (path: string) => location.pathname === path;
 
@@ -18,7 +19,10 @@ const Navbar = () => {
 
   const scrollToContact = () => {
     if (location.pathname !== "/") {
-      window.location.href = "/#contact";
+      navigate("/#contact");
+      setTimeout(() => {
+        document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
     } else {
       document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
     }

@@ -1,5 +1,5 @@
 import { Card } from "@/components/ui/card";
-import { Instagram, Facebook, Twitter, Send, MessageCircle } from "lucide-react";
+import { Instagram, Facebook, Twitter, Send, MessageCircle, YoutubeIcon, Music, Video, Hash, Globe, TrendingUp, Cloud, Gamepad2 } from "lucide-react";
 import { useState } from "react";
 import PackageSelector from "@/components/PackageSelector";
 import Navbar from "@/components/Navbar";
@@ -48,6 +48,90 @@ const platforms = [
     gradient: "from-indigo-500 to-purple-600",
     description: "Scale your Discord server engagement",
     details: "Grow your Discord community with member recruitment campaigns, server optimization, event planning, and moderation services to create a thriving community space."
+  },
+  {
+    name: "Youtube",
+    icon: YoutubeIcon,
+    gradient: "from-red-500 to-red-700",
+    description: "Expand your YouTube channel reach",
+    details: "Grow your YouTube presence with video optimization, subscriber growth campaigns, and engagement strategies to build a thriving channel."
+  },
+  {
+    name: "Spotify",
+    icon: Music,
+    gradient: "from-green-500 to-green-700",
+    description: "Boost your Spotify artist profile",
+    details: "Increase your Spotify streams, followers, and playlist placements with targeted promotion campaigns and audience engagement strategies."
+  },
+  {
+    name: "Twitch",
+    icon: Video,
+    gradient: "from-purple-500 to-purple-700",
+    description: "Grow your Twitch streaming audience",
+    details: "Expand your Twitch channel with viewer engagement campaigns, follower growth strategies, and community building for streamers."
+  },
+  {
+    name: "Tumblr",
+    icon: Hash,
+    gradient: "from-indigo-600 to-blue-700",
+    description: "Amplify your Tumblr presence",
+    details: "Boost your Tumblr blog with follower growth campaigns, content amplification, and engagement strategies tailored for creative communities."
+  },
+  {
+    name: "Reddit",
+    icon: MessageCircle,
+    gradient: "from-orange-500 to-red-600",
+    description: "Build authority on Reddit",
+    details: "Grow your Reddit presence with karma building, subreddit engagement, and community participation strategies to establish credibility."
+  },
+  {
+    name: "Deezer",
+    icon: Music,
+    gradient: "from-pink-500 to-purple-600",
+    description: "Enhance your Deezer music profile",
+    details: "Increase your Deezer streams and followers with targeted music promotion campaigns and playlist placement strategies."
+  },
+  {
+    name: "Binance Square",
+    icon: TrendingUp,
+    gradient: "from-yellow-500 to-orange-600",
+    description: "Boost your Binance Square influence",
+    details: "Expand your reach on Binance Square with follower growth, engagement strategies, and community building in the crypto space."
+  },
+  {
+    name: "Bluesky",
+    icon: Cloud,
+    gradient: "from-sky-300 to-blue-500",
+    description: "Grow your Bluesky network",
+    details: "Build your presence on Bluesky with strategic follower growth, engagement campaigns, and community networking in this emerging platform."
+  },
+  {
+    name: "Vimeo",
+    icon: Video,
+    gradient: "from-blue-400 to-cyan-600",
+    description: "Expand your Vimeo channel",
+    details: "Grow your Vimeo presence with video promotion, follower acquisition, and engagement strategies tailored for creative professionals."
+  },
+  {
+    name: "Dailymotion",
+    icon: Video,
+    gradient: "from-blue-600 to-indigo-700",
+    description: "Boost your Dailymotion channel",
+    details: "Increase your Dailymotion views and subscribers with targeted video promotion and audience growth campaigns."
+  },
+  {
+    name: "Shazam",
+    icon: Music,
+    gradient: "from-blue-500 to-indigo-600",
+    description: "Increase your Shazam recognition",
+    details: "Boost your music discoverability on Shazam with targeted campaigns to increase recognition and listener engagement."
+  },
+  {
+    name: "Trovo",
+    icon: Gamepad2,
+    gradient: "from-green-400 to-teal-600",
+    description: "Grow your Trovo gaming audience",
+    details: "Expand your Trovo streaming channel with viewer engagement, follower growth, and gaming community building strategies."
   },
 ];
 
