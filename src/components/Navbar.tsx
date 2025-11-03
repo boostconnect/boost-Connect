@@ -3,11 +3,13 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import logo from "@/assets/boost-connect-logo.png";
+import { useAuth } from "@/hooks/useAuth";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
+  const { isAdmin } = useAuth();
 
   const isActive = (path: string) => location.pathname === path;
 
@@ -53,6 +55,18 @@ const Navbar = () => {
                 {link.name}
               </Link>
             ))}
+            {isAdmin && (
+              <Link
+                to="/admin"
+                className={`transition-colors ${
+                  isActive("/admin")
+                    ? "text-primary font-medium"
+                    : "text-muted-foreground hover:text-foreground"
+                }`}
+              >
+                Admin
+              </Link>
+            )}
             <Button
               onClick={scrollToContact}
               className="bg-gradient-primary hover:shadow-glow transition-all duration-300"
@@ -87,6 +101,19 @@ const Navbar = () => {
                 {link.name}
               </Link>
             ))}
+            {isAdmin && (
+              <Link
+                to="/admin"
+                onClick={() => setIsOpen(false)}
+                className={`block py-2 transition-colors ${
+                  isActive("/admin")
+                    ? "text-primary font-medium"
+                    : "text-muted-foreground hover:text-foreground"
+                }`}
+              >
+                Admin
+              </Link>
+            )}
             <Button
               onClick={scrollToContact}
               className="w-full bg-gradient-primary hover:shadow-glow transition-all duration-300"

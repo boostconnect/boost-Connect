@@ -1,10 +1,11 @@
 import { Card } from "@/components/ui/card";
 import { Instagram, Facebook, Twitter, Send, MessageCircle, YoutubeIcon, Music, Video, Hash, Globe, TrendingUp, Cloud, Gamepad2 } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import PackageSelector from "@/components/PackageSelector";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import AnimatedBackground from "@/components/AnimatedBackground";
+import { supabase } from "@/integrations/supabase/client";
 import {
   Select,
   SelectContent,
@@ -138,6 +139,23 @@ const platforms = [
 const ServicesPage = () => {
   const [selectedPlatform, setSelectedPlatform] = useState<string>("");
   const [selectedPlatform2, setSelectedPlatform2] = useState<string>("");
+  const [availablePlatforms, setAvailablePlatforms] = useState<string[]>([]);
+
+  useEffect(() => {
+    fetchAvailablePlatforms();
+  }, []);
+
+  const fetchAvailablePlatforms = async () => {
+    const { data } = await supabase
+      .from("services")
+      .select("platform")
+      .order("platform");
+
+    if (data) {
+      const uniquePlatforms = [...new Set(data.map(item => item.platform))];
+      setAvailablePlatforms(uniquePlatforms);
+    }
+  };
 
   return (
     <div className="min-h-screen bg-background text-foreground">

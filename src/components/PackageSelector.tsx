@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useToast } from "@/hooks/use-toast";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { supabase } from "@/integrations/supabase/client";
 import {
   Select,
   SelectContent,
@@ -118,8 +119,33 @@ const PackageSelector = ({ platform, onClose }: PackageSelectorProps) => {
   const [selectedService, setSelectedService] = useState<string>("");
   const [accountLink, setAccountLink] = useState<string>("");
   const [quantity, setQuantity] = useState<string>("");
+  const [services, setServices] = useState<Service[]>([]);
 
-  const services = platformServices[platform] || [];
+  useEffect(() => {
+    fetchServices();
+  }, [platform]);
+
+  const fetchServices = async () => {
+    const { data } = await supabase
+      .from("services")
+      .select("*")
+      .eq("platform", platform);
+
+    if (data) {
+      const mappedServices: Service[] = data.map(service => ({
+        id: service.id,
+        name: service.service_name,
+        description: service.description || "",
+        price: service.price,
+        features: service.features || [],
+        quality: service.quality || "",
+        countries: service.countries || undefined,
+        speed: service.speed || undefined,
+      }));
+      setServices(mappedServices);
+    }
+  };
+
   const selectedServiceData = services.find(s => s.id === selectedService);
 
   const handleSubmit = () => {
