@@ -44,30 +44,30 @@ const Services = () => {
     <section id="services" className="py-24 relative">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">Our Services</h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Choose your platform and select the perfect package to grow your audience
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-primary to-violet-500">Our Services</h2>
+          <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
+            Professional social media growth campaigns powered by Web3 technology. Choose your platform and start growing your brand today.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {platforms.map((platform, index) => {
             const Icon = platform.icon;
             return (
               <Card
                 key={platform.name}
-                className="group relative overflow-hidden bg-gradient-card backdrop-blur-xl border-border hover:shadow-glow cursor-pointer transition-all duration-300 hover:scale-105"
+                className="group relative overflow-hidden bg-gradient-card backdrop-blur-xl border-border hover:shadow-xl cursor-pointer transition-all duration-300 hover:-translate-y-1"
                 onClick={() => setSelectedPlatform(platform.name)}
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className="p-8 relative z-10">
-                  <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${platform.gradient} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                  <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${platform.gradient} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
                     <Icon className="w-8 h-8 text-white" />
                   </div>
-                  <h3 className="text-2xl font-bold mb-2">{platform.name}</h3>
-                  <p className="text-muted-foreground">{platform.description}</p>
+                  <h3 className="text-2xl font-bold mb-3">{platform.name}</h3>
+                  <p className="text-muted-foreground leading-relaxed">{platform.description}</p>
                 </div>
-                <div className={`absolute inset-0 bg-gradient-to-br ${platform.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-300`} />
+                <div className={`absolute inset-0 bg-gradient-to-br ${platform.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-300`} />
               </Card>
             );
           })}
