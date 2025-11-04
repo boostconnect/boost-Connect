@@ -157,7 +157,7 @@ const AdminPanel = () => {
               <p className="mb-4">You can also run the SQL from <code>sql/grant_admin.sql</code> in the Supabase SQL editor to grant admin role to your user.</p>
               <div className="flex gap-2">
                 <a
-                  href={`mailto:support@boostconnect.shop?subject=Request%20Admin%20Access&body=Please%20grant%20admin%20to%20the%20user%20with%20id:%20${user?.id}%20and%20email:%20${user?.email}`}
+                  href={`mailto:boost1connect@gmail.com?subject=Request%20Admin%20Access&body=Please%20grant%20admin%20to%20the%20user%20with%20id:%20${user?.id}%20and%20email:%20${user?.email}`}
                   className="inline-flex items-center px-4 py-2 border rounded-md text-sm font-medium bg-primary text-primary-foreground"
                 >
                   Request Admin Access

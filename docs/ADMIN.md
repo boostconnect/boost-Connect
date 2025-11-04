@@ -2,6 +2,10 @@
 
 This project uses Supabase and a `user_roles` table to manage roles. By default new users are given the `user` role.
 
+Contact Information:
+- For admin access requests: boost1connect@gmail.com
+- Include your user ID and email in the request
+
 Options to grant admin:
 
 1) Supabase Dashboard (recommended)
