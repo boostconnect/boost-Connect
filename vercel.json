@@ -1,0 +1,12 @@
+{
+  "routes": [
+    { "src": "/services", "dest": "/" },
+    { "src": "/about", "dest": "/" },
+    { "src": "/auth", "dest": "/" },
+    { "src": "/admin", "dest": "/" },
+    { "src": "/(.*)", "dest": "/" }
+  ],
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}
