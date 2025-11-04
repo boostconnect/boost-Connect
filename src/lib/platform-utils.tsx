@@ -20,6 +20,8 @@ import {
   Eye,
   Star,
   Bell,
+  Coins,
+  Newspaper,
   type LucideIcon
 } from "lucide-react";
 
@@ -102,6 +104,11 @@ export const platformConfigs: Record<string, PlatformConfig> = {
     gradient: "from-orange-500 to-red-500",
     defaultDescription: "SoundCloud Plays, Followers, Likes & more"
   },
+  "Deezer": {
+    icon: Radio,
+    gradient: "from-purple-500 to-purple-600",
+    defaultDescription: "Deezer Plays, Followers, Favorites & more"
+  },
 
   // Video Platforms
   "Twitch": {
@@ -113,6 +120,16 @@ export const platformConfigs: Record<string, PlatformConfig> = {
     icon: Play,
     gradient: "from-blue-500 to-blue-700",
     defaultDescription: "Vimeo Views, Followers, Likes & more"
+  },
+  "Rumble": {
+    icon: Play,
+    gradient: "from-green-600 to-green-800",
+    defaultDescription: "Rumble Views, Followers, Engagement & more"
+  },
+  "FanVue": {
+    icon: Play,
+    gradient: "from-pink-500 to-pink-700",
+    defaultDescription: "FanVue Followers, Likes, Subscribers & more"
   },
 
   // Blog & Community
@@ -171,6 +188,11 @@ export const platformConfigs: Record<string, PlatformConfig> = {
     icon: Users,
     gradient: "from-blue-400 to-blue-600",
     defaultDescription: "Website Visits, Page Views & Traffic"
+  },
+  "Binance Square": {
+    icon: Coins,
+    gradient: "from-yellow-400 to-yellow-600",
+    defaultDescription: "Binance Square Followers, Likes, Engagement & more"
   },
 
   // Engagement Services

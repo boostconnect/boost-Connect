@@ -1,5 +1,4 @@
 import { Card } from "@/components/ui/card";
-import { Instagram, Facebook, Twitter, Send, MessageCircle, YoutubeIcon, Music, Video, Hash, Globe, TrendingUp, Cloud, Gamepad2 } from "lucide-react";
 import { useState, useEffect } from "react";
 import PackageSelector from "@/components/PackageSelector";
 import Navbar from "@/components/Navbar";
@@ -13,47 +12,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-
-// Icon mapping for platforms
-const platformIcons: Record<string, any> = {
-  "X (Twitter)": Twitter,
-  "Telegram": Send,
-  "Instagram": Instagram,
-  "Facebook": Facebook,
-  "Discord": MessageCircle,
-  "Youtube": YoutubeIcon,
-  "Spotify": Music,
-  "Twitch": Video,
-  "Tumblr": Hash,
-  "Reddit": MessageCircle,
-  "Deezer": Music,
-  "Binance Square": TrendingUp,
-  "Bluesky": Cloud,
-  "Vimeo": Video,
-  "Dailymotion": Video,
-  "Shazam": Music,
-  "Trovo": Gamepad2,
-};
-
-const platformGradients: Record<string, string> = {
-  "X (Twitter)": "from-sky-400 to-blue-600",
-  "Telegram": "from-blue-400 to-blue-600",
-  "Instagram": "from-purple-600 to-pink-600",
-  "Facebook": "from-blue-600 to-blue-800",
-  "Discord": "from-indigo-500 to-purple-600",
-  "Youtube": "from-red-500 to-red-700",
-  "Spotify": "from-green-500 to-green-700",
-  "Twitch": "from-purple-500 to-purple-700",
-  "Tumblr": "from-indigo-600 to-blue-700",
-  "Reddit": "from-orange-500 to-red-600",
-  "Deezer": "from-pink-500 to-purple-600",
-  "Binance Square": "from-yellow-500 to-orange-600",
-  "Bluesky": "from-sky-300 to-blue-500",
-  "Vimeo": "from-blue-400 to-cyan-600",
-  "Dailymotion": "from-blue-600 to-indigo-700",
-  "Shazam": "from-blue-500 to-indigo-600",
-  "Trovo": "from-green-400 to-teal-600",
-};
+import { getPlatformConfig } from "@/lib/platform-utils";
 
 const ServicesPage = () => {
   const [selectedPlatform, setSelectedPlatform] = useState<string>("");
@@ -76,13 +35,6 @@ const ServicesPage = () => {
     }
   };
 
-  const getPlatformIcon = (platformName: string) => {
-    return platformIcons[platformName] || Globe;
-  };
-
-  const getPlatformGradient = (platformName: string) => {
-    return platformGradients[platformName] || "from-gray-400 to-gray-600";
-  };
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -114,13 +66,17 @@ const ServicesPage = () => {
                   </SelectTrigger>
                   <SelectContent className="bg-popover z-50">
                     {availablePlatforms.map((platformName) => {
-                      const Icon = getPlatformIcon(platformName);
-                      const gradient = getPlatformGradient(platformName);
+                      const config = getPlatformConfig(platformName);
+                      const Icon = config.icon;
                       return (
                         <SelectItem key={platformName} value={platformName} className="text-base py-3">
                           <div className="flex items-center gap-3">
-                            <div className={`w-8 h-8 rounded-lg bg-gradient-to-br ${gradient} flex items-center justify-center`}>
-                              <Icon className="w-4 h-4 text-white" />
+                            <div className={`w-8 h-8 rounded-lg bg-gradient-to-br ${config.gradient} flex items-center justify-center`}>
+                              {typeof Icon === 'function' && Icon.length === 0 ? (
+                                <Icon />
+                              ) : (
+                                <Icon className="w-4 h-4 text-white" />
+                              )}
                             </div>
                             <span>{platformName}</span>
                           </div>
@@ -153,13 +109,17 @@ const ServicesPage = () => {
                   </SelectTrigger>
                   <SelectContent className="bg-popover z-50">
                     {availablePlatforms.map((platformName) => {
-                      const Icon = getPlatformIcon(platformName);
-                      const gradient = getPlatformGradient(platformName);
+                      const config = getPlatformConfig(platformName);
+                      const Icon = config.icon;
                       return (
                         <SelectItem key={platformName} value={platformName} className="text-base py-3">
                           <div className="flex items-center gap-3">
-                            <div className={`w-8 h-8 rounded-lg bg-gradient-to-br ${gradient} flex items-center justify-center`}>
-                              <Icon className="w-4 h-4 text-white" />
+                            <div className={`w-8 h-8 rounded-lg bg-gradient-to-br ${config.gradient} flex items-center justify-center`}>
+                              {typeof Icon === 'function' && Icon.length === 0 ? (
+                                <Icon />
+                              ) : (
+                                <Icon className="w-4 h-4 text-white" />
+                              )}
                             </div>
                             <span>{platformName}</span>
                           </div>
