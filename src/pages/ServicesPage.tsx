@@ -1,5 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { Instagram, Facebook, Twitter, Send, MessageCircle, YoutubeIcon, Music, Video, Hash, Globe, TrendingUp, Cloud, Gamepad2 } from "lucide-react";
+import { Linkedin, Tiktok, Rumble, Fanvue, Medium } from "@/components/icons/PlatformIcons";
 import { useState, useEffect } from "react";
 import PackageSelector from "@/components/PackageSelector";
 import Navbar from "@/components/Navbar";
@@ -22,6 +23,10 @@ const platformIcons: Record<string, any> = {
   "Facebook": Facebook,
   "Discord": MessageCircle,
   "Youtube": YoutubeIcon,
+  "Linkedin": Linkedin,
+  "LinkedIn": Linkedin,
+  "Tiktok": Tiktok,
+  "TikTok": Tiktok,
   "Spotify": Music,
   "Twitch": Video,
   "Tumblr": Hash,
@@ -33,6 +38,9 @@ const platformIcons: Record<string, any> = {
   "Dailymotion": Video,
   "Shazam": Music,
   "Trovo": Gamepad2,
+  "Rumble": Rumble,
+  "FanVue": Fanvue,
+  "Medium": Medium,
 };
 
 const platformGradients: Record<string, string> = {
@@ -42,6 +50,10 @@ const platformGradients: Record<string, string> = {
   "Facebook": "from-blue-600 to-blue-800",
   "Discord": "from-indigo-500 to-purple-600",
   "Youtube": "from-red-500 to-red-700",
+  "Linkedin": "from-blue-600 to-blue-800",
+  "LinkedIn": "from-blue-600 to-blue-800",
+  "Tiktok": "from-black to-pink-500",
+  "TikTok": "from-black to-pink-500",
   "Spotify": "from-green-500 to-green-700",
   "Twitch": "from-purple-500 to-purple-700",
   "Tumblr": "from-indigo-600 to-blue-700",
@@ -53,6 +65,9 @@ const platformGradients: Record<string, string> = {
   "Dailymotion": "from-blue-600 to-indigo-700",
   "Shazam": "from-blue-500 to-indigo-600",
   "Trovo": "from-green-400 to-teal-600",
+  "Rumble": "from-slate-600 to-slate-800",
+  "FanVue": "from-pink-500 to-indigo-600",
+  "Medium": "from-gray-700 to-gray-900",
 };
 
 const ServicesPage = () => {
@@ -72,7 +87,28 @@ const ServicesPage = () => {
 
     if (data) {
       const uniquePlatforms = [...new Set(data.map(item => item.platform))];
-      setAvailablePlatforms(uniquePlatforms);
+
+      // Baseline platforms to ensure common platforms are always available in the selector
+      const baselinePlatforms = [
+        "X (Twitter)",
+        "Youtube",
+        "Linkedin",
+        "Tiktok",
+        "Telegram",
+        "Spotify",
+        "Twitch",
+        "Discord",
+        "Reddit",
+        "Deezer",
+        "Binance Square",
+        "Vimeo",
+        "Rumble",
+        "FanVue",
+        "Medium",
+      ];
+
+      const merged = [...new Set([...uniquePlatforms, ...baselinePlatforms])];
+      setAvailablePlatforms(merged);
     }
   };
 
