@@ -65,46 +65,6 @@ const PackageSelector = ({ platform, onClose }: PackageSelectorProps) => {
 
   const selectedServiceData = services.find(s => s.id === selectedService);
 
-  const renderServiceDetails = () => {
-    if (!selectedServiceData) return null;
-    return (
-      <div className="mt-6 p-6 bg-muted/50 rounded-lg">
-        <h4 className="font-semibold mb-4">Service Details</h4>
-        <div className="space-y-3">
-          {selectedServiceData.description && (
-            <p className="text-sm text-muted-foreground">{selectedServiceData.description}</p>
-          )}
-          <div className="grid grid-cols-2 gap-4 mt-4">
-            {selectedServiceData.quality && (
-              <div>
-                <span className="text-sm font-medium">Quality:</span>
-                <p className="text-sm text-muted-foreground">{selectedServiceData.quality}</p>
-              </div>
-            )}
-            {selectedServiceData.speed && (
-              <div>
-                <span className="text-sm font-medium">Speed:</span>
-                <p className="text-sm text-muted-foreground">{selectedServiceData.speed}</p>
-              </div>
-            )}
-          </div>
-          {selectedServiceData.features && selectedServiceData.features.length > 0 && (
-            <div className="mt-4">
-              <span className="text-sm font-medium">Features:</span>
-              <ul className="mt-2 space-y-1">
-                {selectedServiceData.features.map((feature, index) => (
-                  <li key={index} className="text-sm text-muted-foreground flex items-center">
-                    <span className="mr-2">•</span>
-                    {feature}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
-        </div>
-      </div>
-    );
-  };
 
   const renderServiceDetails = () => {
     if (!selectedServiceData) return null;
