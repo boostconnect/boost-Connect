@@ -14,127 +14,46 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
-const platforms = [
-  {
-    name: "X (Twitter)",
-    icon: Twitter,
-    gradient: "from-sky-400 to-blue-600",
-    description: "Build your X following with strategic campaigns",
-    details: "Accelerate your X growth with trending topic engagement, strategic posting schedules, retweet campaigns, and authentic community building to establish your brand voice."
-  },
-  {
-    name: "Telegram",
-    icon: Send,
-    gradient: "from-blue-400 to-blue-600",
-    description: "Boost your Telegram community growth",
-    details: "Expand your Telegram channel or group with targeted member acquisition, engagement strategies, and community management to build a loyal and active audience."
-  },
-  {
-    name: "Instagram",
-    icon: Instagram,
-    gradient: "from-purple-600 to-pink-600",
-    description: "Grow your Instagram presence with targeted campaigns",
-    details: "Our Instagram growth service includes strategic content planning, hashtag optimization, engagement tactics, and influencer collaboration to maximize your reach and follower growth."
-  },
-  {
-    name: "Facebook",
-    icon: Facebook,
-    gradient: "from-blue-600 to-blue-800",
-    description: "Expand your Facebook reach and engagement",
-    details: "Boost your Facebook page with targeted ad campaigns, community management, viral content creation, and data-driven strategies to increase your audience and engagement rates."
-  },
-  {
-    name: "Discord",
-    icon: MessageCircle,
-    gradient: "from-indigo-500 to-purple-600",
-    description: "Scale your Discord server engagement",
-    details: "Grow your Discord community with member recruitment campaigns, server optimization, event planning, and moderation services to create a thriving community space."
-  },
-  {
-    name: "Youtube",
-    icon: YoutubeIcon,
-    gradient: "from-red-500 to-red-700",
-    description: "Expand your YouTube channel reach",
-    details: "Grow your YouTube presence with video optimization, subscriber growth campaigns, and engagement strategies to build a thriving channel."
-  },
-  {
-    name: "Spotify",
-    icon: Music,
-    gradient: "from-green-500 to-green-700",
-    description: "Boost your Spotify artist profile",
-    details: "Increase your Spotify streams, followers, and playlist placements with targeted promotion campaigns and audience engagement strategies."
-  },
-  {
-    name: "Twitch",
-    icon: Video,
-    gradient: "from-purple-500 to-purple-700",
-    description: "Grow your Twitch streaming audience",
-    details: "Expand your Twitch channel with viewer engagement campaigns, follower growth strategies, and community building for streamers."
-  },
-  {
-    name: "Tumblr",
-    icon: Hash,
-    gradient: "from-indigo-600 to-blue-700",
-    description: "Amplify your Tumblr presence",
-    details: "Boost your Tumblr blog with follower growth campaigns, content amplification, and engagement strategies tailored for creative communities."
-  },
-  {
-    name: "Reddit",
-    icon: MessageCircle,
-    gradient: "from-orange-500 to-red-600",
-    description: "Build authority on Reddit",
-    details: "Grow your Reddit presence with karma building, subreddit engagement, and community participation strategies to establish credibility."
-  },
-  {
-    name: "Deezer",
-    icon: Music,
-    gradient: "from-pink-500 to-purple-600",
-    description: "Enhance your Deezer music profile",
-    details: "Increase your Deezer streams and followers with targeted music promotion campaigns and playlist placement strategies."
-  },
-  {
-    name: "Binance Square",
-    icon: TrendingUp,
-    gradient: "from-yellow-500 to-orange-600",
-    description: "Boost your Binance Square influence",
-    details: "Expand your reach on Binance Square with follower growth, engagement strategies, and community building in the crypto space."
-  },
-  {
-    name: "Bluesky",
-    icon: Cloud,
-    gradient: "from-sky-300 to-blue-500",
-    description: "Grow your Bluesky network",
-    details: "Build your presence on Bluesky with strategic follower growth, engagement campaigns, and community networking in this emerging platform."
-  },
-  {
-    name: "Vimeo",
-    icon: Video,
-    gradient: "from-blue-400 to-cyan-600",
-    description: "Expand your Vimeo channel",
-    details: "Grow your Vimeo presence with video promotion, follower acquisition, and engagement strategies tailored for creative professionals."
-  },
-  {
-    name: "Dailymotion",
-    icon: Video,
-    gradient: "from-blue-600 to-indigo-700",
-    description: "Boost your Dailymotion channel",
-    details: "Increase your Dailymotion views and subscribers with targeted video promotion and audience growth campaigns."
-  },
-  {
-    name: "Shazam",
-    icon: Music,
-    gradient: "from-blue-500 to-indigo-600",
-    description: "Increase your Shazam recognition",
-    details: "Boost your music discoverability on Shazam with targeted campaigns to increase recognition and listener engagement."
-  },
-  {
-    name: "Trovo",
-    icon: Gamepad2,
-    gradient: "from-green-400 to-teal-600",
-    description: "Grow your Trovo gaming audience",
-    details: "Expand your Trovo streaming channel with viewer engagement, follower growth, and gaming community building strategies."
-  },
-];
+// Icon mapping for platforms
+const platformIcons: Record<string, any> = {
+  "X (Twitter)": Twitter,
+  "Telegram": Send,
+  "Instagram": Instagram,
+  "Facebook": Facebook,
+  "Discord": MessageCircle,
+  "Youtube": YoutubeIcon,
+  "Spotify": Music,
+  "Twitch": Video,
+  "Tumblr": Hash,
+  "Reddit": MessageCircle,
+  "Deezer": Music,
+  "Binance Square": TrendingUp,
+  "Bluesky": Cloud,
+  "Vimeo": Video,
+  "Dailymotion": Video,
+  "Shazam": Music,
+  "Trovo": Gamepad2,
+};
+
+const platformGradients: Record<string, string> = {
+  "X (Twitter)": "from-sky-400 to-blue-600",
+  "Telegram": "from-blue-400 to-blue-600",
+  "Instagram": "from-purple-600 to-pink-600",
+  "Facebook": "from-blue-600 to-blue-800",
+  "Discord": "from-indigo-500 to-purple-600",
+  "Youtube": "from-red-500 to-red-700",
+  "Spotify": "from-green-500 to-green-700",
+  "Twitch": "from-purple-500 to-purple-700",
+  "Tumblr": "from-indigo-600 to-blue-700",
+  "Reddit": "from-orange-500 to-red-600",
+  "Deezer": "from-pink-500 to-purple-600",
+  "Binance Square": "from-yellow-500 to-orange-600",
+  "Bluesky": "from-sky-300 to-blue-500",
+  "Vimeo": "from-blue-400 to-cyan-600",
+  "Dailymotion": "from-blue-600 to-indigo-700",
+  "Shazam": "from-blue-500 to-indigo-600",
+  "Trovo": "from-green-400 to-teal-600",
+};
 
 const ServicesPage = () => {
   const [selectedPlatform, setSelectedPlatform] = useState<string>("");
@@ -155,6 +74,14 @@ const ServicesPage = () => {
       const uniquePlatforms = [...new Set(data.map(item => item.platform))];
       setAvailablePlatforms(uniquePlatforms);
     }
+  };
+
+  const getPlatformIcon = (platformName: string) => {
+    return platformIcons[platformName] || Globe;
+  };
+
+  const getPlatformGradient = (platformName: string) => {
+    return platformGradients[platformName] || "from-gray-400 to-gray-600";
   };
 
   return (
@@ -186,15 +113,16 @@ const ServicesPage = () => {
                     <SelectValue placeholder="Select a platform" />
                   </SelectTrigger>
                   <SelectContent className="bg-popover z-50">
-                    {platforms.map((platform) => {
-                      const Icon = platform.icon;
+                    {availablePlatforms.map((platformName) => {
+                      const Icon = getPlatformIcon(platformName);
+                      const gradient = getPlatformGradient(platformName);
                       return (
-                        <SelectItem key={platform.name} value={platform.name} className="text-base py-3">
+                        <SelectItem key={platformName} value={platformName} className="text-base py-3">
                           <div className="flex items-center gap-3">
-                            <div className={`w-8 h-8 rounded-lg bg-gradient-to-br ${platform.gradient} flex items-center justify-center`}>
+                            <div className={`w-8 h-8 rounded-lg bg-gradient-to-br ${gradient} flex items-center justify-center`}>
                               <Icon className="w-4 h-4 text-white" />
                             </div>
-                            <span>{platform.name}</span>
+                            <span>{platformName}</span>
                           </div>
                         </SelectItem>
                       );
@@ -224,15 +152,16 @@ const ServicesPage = () => {
                     <SelectValue placeholder="Select a platform" />
                   </SelectTrigger>
                   <SelectContent className="bg-popover z-50">
-                    {platforms.map((platform) => {
-                      const Icon = platform.icon;
+                    {availablePlatforms.map((platformName) => {
+                      const Icon = getPlatformIcon(platformName);
+                      const gradient = getPlatformGradient(platformName);
                       return (
-                        <SelectItem key={platform.name} value={platform.name} className="text-base py-3">
+                        <SelectItem key={platformName} value={platformName} className="text-base py-3">
                           <div className="flex items-center gap-3">
-                            <div className={`w-8 h-8 rounded-lg bg-gradient-to-br ${platform.gradient} flex items-center justify-center`}>
+                            <div className={`w-8 h-8 rounded-lg bg-gradient-to-br ${gradient} flex items-center justify-center`}>
                               <Icon className="w-4 h-4 text-white" />
                             </div>
-                            <span>{platform.name}</span>
+                            <span>{platformName}</span>
                           </div>
                         </SelectItem>
                       );
