@@ -55,6 +55,13 @@ const platformGradients: Record<string, string> = {
   "Trovo": "from-green-400 to-teal-600",
 };
 
+const getPlatformConfig = (platformName: string) => {
+  return {
+    icon: platformIcons[platformName] || Globe,
+    gradient: platformGradients[platformName] || "from-gray-500 to-gray-700"
+  };
+};
+
 const ServicesPage = () => {
   const [selectedPlatform, setSelectedPlatform] = useState<string>("");
   const [selectedPlatform2, setSelectedPlatform2] = useState<string>("");
