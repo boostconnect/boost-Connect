@@ -62,3 +62,23 @@ All colors MUST be HSL.
     @apply bg-background text-foreground;
   }
 }
+
+/* Wallpaper: circuit board
+   Place your wallpaper image at: public/assets/wallpapers/circuit-board.jpg
+   If you prefer a remote URL, update the --circuit-wallpaper variable in :root or replace the url(...) below.
+*/
+
+@layer utilities {
+  .wallpaper-circuit {
+    position: fixed;
+    inset: 0;
+    z-index: -30;
+    background-image: url('/assets/wallpapers/circuit-board.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    opacity: 0.9;
+    filter: saturate(0.9) brightness(0.85);
+    pointer-events: none;
+  }
+}

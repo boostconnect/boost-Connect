@@ -107,6 +107,10 @@ const ServicesPage = () => {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
+      {/* Wallpaper layer (uses local file at public/assets/wallpapers/circuit-board.jpg).
+          Download the image from https://motionbgs.com/circuit-board and place it in that path.
+          This div sits behind the animated canvas and page content. */}
+      <div className="wallpaper-circuit" aria-hidden />
       <AnimatedBackground />
       <Navbar />
       
