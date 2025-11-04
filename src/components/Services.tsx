@@ -7,33 +7,32 @@ const platforms = [
   {
     name: "X (Twitter)",
     icon: Twitter,
-    gradient: "from-sky-400 to-blue-600",
-    description: "Build your X following with strategic campaigns"
+    gradient: "from-blue-500 to-blue-600",
+    description: "Increase your X visibility with authentic followers, likes, and retweets"
   },
   {
     name: "Telegram",
     icon: Send,
-    gradient: "from-blue-400 to-blue-600",
-    description: "Boost your Telegram community growth"
+    gradient: "from-sky-400 to-blue-500",
+    description: "Grow your Telegram channels and groups with real, active members"
   },
   {
     name: "Youtube",
     icon: YoutubeIcon,
-    gradient: "from-purple-600 to-pink-600",
-    description: "Grow your Instagram presence with targeted campaigns"
+    gradient: "from-red-500 to-red-600",
+    description: "Boost your YouTube presence with views, likes, and subscribers"
   },
   {
     name: "Facebook",
     icon: Facebook,
-    gradient: "from-blue-600 to-blue-800",
-    Icon: Linkedin,
-    description: "Expand your Facebook reach and engagement"
+    gradient: "from-blue-600 to-indigo-600",
+    description: "Enhance your Facebook reach with followers, likes, and engagement"
   },
   {
     name: "Discord",
     icon: MessageCircle,
-    gradient: "from-indigo-500 to-purple-600",
-    description: "Scale your Discord server engagement"
+    gradient: "from-indigo-500 to-purple-500",
+    description: "Build active Discord communities with genuine members"
   },
 ];
 

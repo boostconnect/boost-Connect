@@ -3,6 +3,7 @@ import { useToast } from "@/hooks/use-toast";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { supabase } from "@/integrations/supabase/client";
+import { Card } from "@/components/ui/card";
 import {
   Select,
   SelectContent,
@@ -102,6 +103,53 @@ const PackageSelector = ({ platform, onClose }: PackageSelectorProps) => {
           )}
         </div>
       </div>
+    );
+  };
+
+  const renderServiceDetails = () => {
+    if (!selectedServiceData) return null;
+    return (
+      <Card className="mt-6 p-6">
+        <h4 className="font-semibold mb-4 text-lg">Service Details</h4>
+        <div className="space-y-4">
+          {selectedServiceData.description && (
+            <div className="pb-4 border-b">
+              <p className="text-sm text-muted-foreground">{selectedServiceData.description}</p>
+            </div>
+          )}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div>
+              <span className="text-sm font-medium block mb-1">Price</span>
+              <p className="text-lg font-semibold text-primary">{selectedServiceData.price}</p>
+            </div>
+            {selectedServiceData.quality && (
+              <div>
+                <span className="text-sm font-medium block mb-1">Quality</span>
+                <p className="text-muted-foreground">{selectedServiceData.quality}</p>
+              </div>
+            )}
+            {selectedServiceData.speed && (
+              <div>
+                <span className="text-sm font-medium block mb-1">Delivery Speed</span>
+                <p className="text-muted-foreground">{selectedServiceData.speed}</p>
+              </div>
+            )}
+          </div>
+          {selectedServiceData.features && selectedServiceData.features.length > 0 && (
+            <div className="pt-4 border-t">
+              <span className="text-sm font-medium mb-2 block">Features:</span>
+              <ul className="grid grid-cols-1 md:grid-cols-2 gap-2">
+                {selectedServiceData.features.map((feature, index) => (
+                  <li key={index} className="text-sm text-muted-foreground flex items-start">
+                    <span className="mr-2 text-primary">•</span>
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </div>
+      </Card>
     );
   };
 
