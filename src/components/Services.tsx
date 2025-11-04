@@ -1,46 +1,16 @@
 import { Card } from "@/components/ui/card";
-import { Instagram, Facebook, Twitter, Send, MessageCircle, Icon, Linkedin, YoutubeIcon } from "lucide-react";
+import { platformConfigs } from "@/lib/platform-utils";
 import { useState } from "react";
 import PackageSelector from "./PackageSelector";
 
-const XIcon = () => (
-  <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
-    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-  </svg>
-);
-
-const platforms = [
-  {
-    name: "X (Twitter)",
-    icon: XIcon,
-    gradient: "from-neutral-700 to-neutral-900",
-    description: "Boost your X presence with real followers and engagement"
-  },
-  {
-    name: "Telegram",
-    icon: Send,
-    gradient: "from-sky-400 to-blue-500",
-    description: "Grow your Telegram channels with active members"
-  },
-  {
-    name: "Youtube",
-    icon: YoutubeIcon,
-    gradient: "from-red-500 to-red-600",
-    description: "Increase YouTube views and subscribers"
-  },
-  {
-    name: "Facebook",
-    icon: Facebook,
-    gradient: "from-blue-600 to-indigo-600",
-    description: "Get more Facebook followers and engagement"
-  },
-  {
-    name: "Discord",
-    icon: MessageCircle,
-    gradient: "from-indigo-500 to-purple-500",
-    description: "Build engaged Discord communities"
-  },
-];
+const platforms = Object.entries(platformConfigs)
+  .filter(([name]) => !["Twitter", "YouTube"].includes(name)) // Filter out duplicates
+  .map(([name, config]) => ({
+    name,
+    icon: config.icon,
+    gradient: config.gradient,
+    description: config.defaultDescription
+  }));
 
 const Services = () => {
   const [selectedPlatform, setSelectedPlatform] = useState<string | null>(null);
