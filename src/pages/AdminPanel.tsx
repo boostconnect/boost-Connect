@@ -56,7 +56,8 @@ const AdminPanel = () => {
     }
 
     setUser(user);
-
+    // Check if the user has an admin role. If not, we won't redirect away
+    // so we can show a helpful UI explaining how to request access.
     const { data: roleData } = await supabase
       .from("user_roles")
       .select("role")
@@ -65,8 +66,9 @@ const AdminPanel = () => {
       .single();
 
     if (!roleData) {
-      toast.error("Access denied. Admin privileges required.");
-      navigate("/");
+      // Not an admin. Leave isAdmin as false and stop loading so UI can render instructions.
+      setIsAdmin(false);
+      setLoading(false);
       return;
     }
 
@@ -142,7 +144,39 @@ const AdminPanel = () => {
   }
 
   if (!isAdmin) {
-    return null;
+    // Show a user-friendly access denied panel with next steps instead of redirecting.
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <Navbar />
+        <main className="container mx-auto px-4 py-12">
+          <div className="max-w-2xl mx-auto">
+            <div className="p-8 border rounded-lg shadow-sm bg-background">
+              <h2 className="text-2xl font-semibold mb-4">Access denied</h2>
+              <p className="mb-4">Admin privileges are required to access this page.</p>
+              <p className="mb-4">If you believe you should have access, ask an existing admin to promote your account.</p>
+              <p className="mb-4">You can also run the SQL from <code>sql/grant_admin.sql</code> in the Supabase SQL editor to grant admin role to your user.</p>
+              <div className="flex gap-2">
+                <a
+                  href={`mailto:support@boostconnect.shop?subject=Request%20Admin%20Access&body=Please%20grant%20admin%20to%20the%20user%20with%20id:%20${user?.id}%20and%20email:%20${user?.email}`}
+                  className="inline-flex items-center px-4 py-2 border rounded-md text-sm font-medium bg-primary text-primary-foreground"
+                >
+                  Request Admin Access
+                </a>
+                <a
+                  href="https://app.supabase.com"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center px-4 py-2 border rounded-md text-sm font-medium"
+                >
+                  Open Supabase
+                </a>
+              </div>
+            </div>
+          </div>
+        </main>
+        <Footer />
+      </div>
+    );
   }
 
   return (
