@@ -1,12 +1,16 @@
 {
-  "routes": [
-    { "src": "/services", "dest": "/" },
-    { "src": "/about", "dest": "/" },
-    { "src": "/auth", "dest": "/" },
-    { "src": "/admin", "dest": "/" },
-    { "src": "/(.*)", "dest": "/" }
-  ],
   "rewrites": [
     { "source": "/(.*)", "destination": "/index.html" }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "s-maxage=1, stale-while-revalidate"
+        }
+      ]
+    }
   ]
 }
